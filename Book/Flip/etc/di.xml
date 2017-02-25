@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<virtualType name="Book\Flip\Model\ResourceModel\Flip\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">book_flip</argument>
+			<argument name="resourceModel" xsi:type="string">Book\Flip\Model\ResourceModel\Flip\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="book_flip_grid_data_source" xsi:type="string">Book\Flip\Model\ResourceModel\Flip\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	<preference for="Magento\Catalog\Block\Product\View\Gallery" type="Book\Flip\Block\Product\View\Gallery" />
+	<preference for="Magento\Catalog\Block\Product\ListProduct" type="Book\Flip\Block\Product\ListProduct" />
+</config>

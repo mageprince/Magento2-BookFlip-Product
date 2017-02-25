@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+		<css src="Book_Flip/css/book.css"/>
+		<link src="Book_Flip/js/modernizr.2.5.3.min.js"/>
+		<link src="Book_Flip/js/turn.js"/>
+		<link src="Book_Flip/js/turn.html4.min.js"/>
+	</head>
+	<body>
+		<referenceContainer name="content">
+			<block class="Book\Flip\Block\Index\Index" name="index.book" template="Book_Flip::index/book.phtml"/>
+		</referenceContainer>
+	</body>
+</page>

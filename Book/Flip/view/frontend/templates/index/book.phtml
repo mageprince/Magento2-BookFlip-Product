@@ -1,0 +1,56 @@
+<?php 
+$id = $this->getRequest()->getParam('id');
+$status = $this->getConfig('booksettings/general/enable');
+$height = $this->getConfig('booksettings/general/display_height');
+$width = $this->getConfig('booksettings/general/display_width');
+$duration = $this->getConfig('booksettings/general/display_duration');
+$book = $this->getBook($id);
+?>
+<?php if($id): ?>
+	<div id="next">Next</div>
+	<div id="prev">Previous</div>
+		<div class="flipbook-viewport">
+			<div class="container">
+				<div class="flipbook">
+				<?php $files = $this->getBookPages($book); ?>
+				<?php foreach ($files as $file) { ?>
+					<div id="bkp" style="<?php echo $this->getbackgroundImage($book, $file); ?>"></div>
+				<?php } ?>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$k = jQuery.noConflict();
+		function loadApp() {
+			
+			$k('.flipbook').turn({ 
+				width:<?php echo $width; ?>,
+				height:<?php echo $height; ?>, 
+				elevation: 50, 
+				gradients: true, 
+				autoCenter: true, 
+				duration: <?php echo $duration; ?> 
+			}).turn('pages', <?php echo $book->getPages() ?>);
+		}
+
+		yepnope({
+			test : Modernizr.csstransforms,
+			yep: ['<?php echo $this->getViewFileUrl('Book_Flip::js/turn.js'); ?>'],
+			nope: ['<?php echo $this->getViewFileUrl('Book_Flip::js/turn.html4.min.js'); ?>'],
+			complete: loadApp
+		});
+
+		$k('#next').click(function(){
+			$k(".flipbook").turn("next");
+		});
+		$k('#prev').click(function(){
+			$k(".flipbook").turn("previous");
+		});
+
+		</script>
+
+		<div class="book-details">
+			<div class="book-title"><?php echo $book->getTitle(); ?></div>
+		</div>
+<?php endif; ?>

@@ -1,0 +1,20 @@
+.flipbook-viewport{ height:100%; width: 100%; padding: 0px 0 50px 0;}
+.flipbook-viewport .page{ width:461px; height:600px; background-color:white; background-repeat:no-repeat; background-size:100% 100%; }
+.flipbook .page{ -webkit-box-shadow:0 0 20px rgba(0,0,0,0.2); -moz-box-shadow:0 0 20px rgba(0,0,0,0.2); -ms-box-shadow:0 0 20px rgba(0,0,0,0.2); -o-box-shadow:0 0 20px rgba(0,0,0,0.2); box-shadow:0 0 20px rgba(0,0,0,0.2); }
+.flipbook-viewport .page img{ -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; margin:0; }
+.flipbook-viewport .shadow{ -webkit-transition: -webkit-box-shadow 0.5s; -moz-transition: -moz-box-shadow 0.5s; -o-transition: -webkit-box-shadow 0.5s; -ms-transition: -ms-box-shadow 0.5s; -webkit-box-shadow:0 0 20px #ccc; -moz-box-shadow:0 0 20px #ccc; -o-box-shadow:0 0 20px #ccc; -ms-box-shadow:0 0 20px #ccc; box-shadow:0 0 20px #ccc; }
+.book-details { float: left; width: 100%; }
+.book-title { float: left; width: 50%; font-weight: bold; font-size: 40px; text-align: center; padding-bottom: 20px; }
+.book-author { float: left; width: 50%; text-align: center; font-size: 25px; }
+.book-description { float: left; width: 50%; align-content: center; padding-top: 15px; }
+.book-thumb { width: 50%; float: left; text-align: center; }
+.flip-books{ float: left; width: 100%; }
+.modal-popup .modal-inner-wrap{ width: 80%; }
+.modal-popup .modal-header{ padding-top: 0; }
+.book-flip-container .book-flip { float: left; position: relative; cursor: pointer; }
+.flip-next-prev {text-align: center;}
+.flip-next-prev img { padding: 5px; }
+.book-flip-container .book-flip img { width: 100%; }
+.book-flip-container .book-flip:hover .flip-view { opacity: 1; }
+.book-flip-container .flip-view { position: absolute; top: 0; margin: 0; height: 100%; width: 100%; text-align: center; opacity: 0; background: rgba(0,0,0,0.6); transition: all 0.5s ease; }
+.book-flip-container .flip-view h5 { position: absolute; color: #fff; top: 33%; width: 100%; text-align: center; font-size: 35px; }

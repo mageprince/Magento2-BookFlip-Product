@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+		<css src="Book_Flip/css/book.css"/>
+		<link src="Book_Flip/js/modernizr.2.5.3.min.js"/>
+		<link src="Book_Flip/js/turn.js"/>
+		<link src="Book_Flip/js/turn.html4.min.js"/>
+	</head>
+    <body>
+        <referenceBlock name="product.info.media.image">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Book_Flip::product/view/gallery.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>
